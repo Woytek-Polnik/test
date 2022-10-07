@@ -1,0 +1,19 @@
+---
+name: OK
+
+on:
+  pull_request:
+    types: [opened, review_requested, ready_for_review, synchronize]
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - "packages/web/**"
+
+jobs:
+  yamellint-misspell-hadolint:
+    runs-on: ubuntu-latest
+    if: ! github.event.pull_request.draft
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
