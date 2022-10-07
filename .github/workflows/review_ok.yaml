@@ -13,7 +13,7 @@ on:
 jobs:
   yamellint-misspell-hadolint:
     runs-on: ubuntu-latest
-    if: github.event.pull_request.draft == false
+    if: ! github.event.pull_request.draft
     steps:
       - name: Checkout
         uses: actions/checkout@v2
