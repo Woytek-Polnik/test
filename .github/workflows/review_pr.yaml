@@ -1,9 +1,9 @@
 ---
-name: Review
+name: PR
 
 on:
   pull_request:
-    types: [ready_for_review, synchronize]
+    types: [review_requested, ready_for_review, synchronize]
   push:
     branches:
       - main
